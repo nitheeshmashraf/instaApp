@@ -31,7 +31,7 @@
 
                     <%- if current_user %>
                     <li>
-                        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+                        <%= link_to "Logout", destroy_user_session_path, method: :delete, confirm: "Are you sure?" %>
                     </li>
                     <% else %>
                     <li>
@@ -60,7 +60,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
             <% flash.each do |a, b| %>
-            <div class="alert alert-sucess"> <%= b %></div>
+            <div class="alert alert-success"> <%= b %></div>
             <% end %>
 
                 <%= yield %>
