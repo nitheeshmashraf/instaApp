@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  # before_action :set_post, only: [:new, :index, :show, :edit, :update, :destroy]
   def new
   	@post = Post.new
   end
@@ -6,9 +7,20 @@ class PostsController < ApplicationController
   def index
     @post = Post.all
   end
+  def edit
+  end
 
   def show
     @post=Post.find(params[:id])
+  end
+
+  def destroy
+     @post=Post.find(params[:id])
+      @post.destroy
+      respond_to do |format|
+        format.html { redirect_to posts_url, notice: 'post was successfully destroyed.' }
+        format.json { head :no_content }
+      end
   end
 
   def create
@@ -25,7 +37,9 @@ class PostsController < ApplicationController
   end
 
   private
-
+def set_post
+   @post = Post.find(params[:id])
+end
   def permit_post
   	params.require(:post).permit(:image, :description)
   	

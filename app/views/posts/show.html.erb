@@ -7,7 +7,8 @@
 	<div class="col-sm-4 white">
 		<%= link_to image_tag(@post.image.url(:original), class: "imgres" ), posts_path%><br>
 		<h2><%= @post.description %></h2>	
-		<%= link_to("Delete", edit_post_path[:id]) %>
+		
+		<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 	</div>
 	<div class="col-sm-4"></div>
 </div><br><br>
