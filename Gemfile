@@ -11,7 +11,7 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem "paperclip", "~> 5.0.0"
-gem 'cocaine', '0.3.2'
+# gem 'cocaine', '0.3.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
