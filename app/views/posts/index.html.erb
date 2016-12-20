@@ -1,2 +1,12 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<%= @post.each do |x|%>
+<div class="row">
+	<div class="col-sm-4"></div>
+	<div class="col-sm-4 white">
+		<!--<%= image_tag x.image.url(:original), class: "imgres"  %><br>-->
+		<%=link_to image_tag(x.image.url(:original), class: "imgres"), x %>
+		<h2><%= x.description %></h2>
+
+	</div>
+	<div class="col-sm-4"></div>
+</div> <br><br>
+<% end %>

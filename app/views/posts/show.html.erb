@@ -1,2 +1,21 @@
-<%= image_tag(@post.image.url(:medium)) %>
-<%= @post.description %>
+
+<div >
+<div class="row">
+	<div class="col-sm-4">
+	<%= link_to("Main", posts_path ) %>
+	</div>
+	<div class="col-sm-4 white">
+		<%= link_to image_tag(@post.image.url(:original), class: "imgres" ), posts_path%><br>
+		<h2><%= @post.description %></h2>	
+		<%= link_to("Delete", edit_post_path[:id]) %>
+	</div>
+	<div class="col-sm-4"></div>
+</div><br><br>
+
+
+
+
+	
+
+</div>
+
