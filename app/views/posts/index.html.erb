@@ -1,12 +1,15 @@
-<%= @post.each do |x|%>
 <div class="row">
 	<div class="col-sm-4"></div>
+	<%= @post.each do |x|%>
 	<div class="col-sm-4 white">
 		<!--<%= image_tag x.image.url(:original), class: "imgres"  %><br>-->
 		<%=link_to image_tag(x.image.url(:original), class: "imgres"), x %>
-		<h2><%= x.description %><%= link_to 'Destroy', x, method: :delete, data: { confirm: 'Are you sure?' } %></h2><br><br>
-		
+		<h2>
+			<%= x.description %><%= link_to 'Destroy', x, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</h2>
+		<br><br>
 	</div>
+	<% end %>
 	<div class="col-sm-4"></div>
 </div> <br><br>
-<% end %>
+
